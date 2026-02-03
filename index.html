@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julekalender</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f6f2ee;
+      text-align: center;
+      padding-top: 80px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎄 Welcome to your advent calendar! 🎄</h1>
+  <p>Write your code to get to your personal calendar:</p>
+
+  <input id="codeInput" placeholder="Code" />
+  <button onclick="login()">Open</button>
+
+  <p>PROTIP: The code is 1 + 1 = ?</p>
+
+  <script>
+    function login() {
+      const codes = {
+        "2": "helene/helene.html"
+      };
+
+      const entered = document.getElementById("codeInput").value;
+
+      if (codes[entered]) {
+        window.location.href = codes[entered];
+      } else {
+        alert("Wrong code, try again!");
+      }
+    }
+  </script>
+
+</body>
+</html>

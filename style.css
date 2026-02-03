@@ -1,0 +1,145 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f6f2ee;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+h1 {
+  color: #d73f3f;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner på nettbrett */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner på mobil */
+    gap: 8px;
+  }
+}
+
+.door {
+  background-color: #d73f3f;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.door:hover {
+  transform: scale(1.1);
+}
+
+.surprise {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+.links {
+  display: flex;
+  flex-direction: column; /* stabler linkene vertikalt */
+  gap: 10px;               /* avstand mellom linkene */
+  margin-top: 20px;
+  text-align: center;      /* sentrer linkene */
+}
+
+.links a {
+  text-decoration: none;    /* fjerner understreking */
+  color: #d73f3f;           /* jule-rød farge */
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 2px solid #d73f3f;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.links a:hover {
+  background-color: #d73f3f;
+  color: white;
+}
+
+/* Luker som ikke kan åpnes ennå */
+.door.locked {
+  background-color: #d73f3f; /* rød */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Luker som er tilgjengelige, men ikke åpnet */
+.door.available {
+  background-color: #d73f3f;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Luker som er åpnet */
+.door.opened {
+  background-color: #4caf50; /* grønn */
+  color: white;
+  cursor: default;
+  box-shadow: none;
+  animation: none;
+  background-size: cover;
+  background-position: center;
+  grid-column: span 2; /* åpne luker blir dobbelt så brede */
+  height: 180px;   
+  border-radius: 10px;
+}
+
+/* Glød-animasjon for tilgjengelige luker */
+@keyframes glow {
+  from { box-shadow: 0 0 10px #ff4400; }
+  to { box-shadow: 0 0 20px #ff4400; }
+}
+
+.link-btn {
+  -webkit-appearance: none; /* fjerner native styling på Safari/Chrome */
+  -moz-appearance: none;    /* fjerner native styling på Firefox */
+  appearance: none;         /* generelt */
+  border: 2px solid #d73f3f;
+  border-radius: 8px;
+  background: none;
+  color: #d73f3f;
+  font-weight: bold;
+  font-family: inherit;     /* arver samme font som body */
+  font-size: 1rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.2;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.link-btn:hover {
+  background-color: #d73f3f;
+  color: white;
+}

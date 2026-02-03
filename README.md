@@ -1,7 +1,6 @@
 # Adventskalender-2025
-Adventskalender for vennene mine&lt;3
+Advent calendar for my friends&lt;3
 
-Idear/TODOs:
-- Finn ut ka som ska ver inni kvar luka
-- Finn 24 bilder til kalenderen
-- 
+It is deployed at: https://emmaowaage.github.io/AdventCalendarPublic/
+
+- It was originally written only in norwegian, but i hope it is understandable anyway!
